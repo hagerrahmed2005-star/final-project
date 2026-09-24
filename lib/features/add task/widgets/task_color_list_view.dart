@@ -9,15 +9,15 @@ class TaskColorListView extends StatefulWidget {
 }
 
 class _TaskColorListViewState extends State<TaskColorListView> {
-  // Changed List<MaterialColor> to standard List<Color>
+
   List<Color> tasksColor = [
-    Colors.red,
-    Colors.yellow,
-    Colors.green,
-    Colors.orange,
-    Colors.blue,
-    Colors.brown,
-    Colors.purple,
+    const Color.fromARGB(255, 82, 10, 5),
+    const Color.fromARGB(255, 245, 220, 2),
+    const Color.fromARGB(255, 209, 126, 2),
+    const Color.fromARGB(255, 5, 137, 10),
+    const Color.fromARGB(255, 5, 117, 208),
+    const Color.fromARGB(255, 82, 29, 9),
+    const Color.fromARGB(255, 128, 0, 128),
   ];
 
   int activeindex = -1;

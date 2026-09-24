@@ -1,6 +1,4 @@
 
-
-
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 
@@ -22,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     
-    // We delay the routing logic to let the 7-second Lottie animation play
+  
     Future.delayed(const Duration(seconds: 7), () {
       if (mounted) {
         Navigator.pushReplacement(
@@ -33,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
     });
   }
 
-  /// Determines where the user should land based on Hive storage
+  
   Widget _NextRoute() {
    
     if(Hive.box<UserModel>(AppConstant.UserBox).isEmpty) {

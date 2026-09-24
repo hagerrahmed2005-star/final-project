@@ -117,7 +117,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                       Hive.box<TaskModel>(AppConstant.TaskBox)
                           .add(
                             TaskModel(
-                              titel: titleController.text,
+                              title: titleController.text,
                               description: descriptionController.text,
                               date: dateController.text,
                               color: Color!,

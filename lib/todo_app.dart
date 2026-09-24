@@ -1,6 +1,4 @@
 
-
-
 import 'package:flutter/material.dart';
 import 'package:todo/features/splash/ui/splash_screen.dart';
 

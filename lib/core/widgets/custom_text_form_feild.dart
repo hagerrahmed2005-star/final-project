@@ -35,7 +35,7 @@ class CustomTextFormFeild extends StatelessWidget {
 
           decoration: InputDecoration(
             filled: true,
-            fillColor: Colors.grey.shade300,
+            fillColor: const Color.fromARGB(255, 210, 198, 198),
             hintText: hintText,
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
             focusedBorder: OutlineInputBorder(

@@ -50,13 +50,12 @@ class TasksListView extends StatelessWidget {
                 child: const Icon(Icons.check, color: Colors.white),
               ),
 
-              // ✨ التحكم في سلوك الاختفاء أو الرجوع
+    
               confirmDismiss: (dismissDirection) async {
                 if (dismissDirection == DismissDirection.startToEnd) {
-                  // سحب يمين للحذف -> يرجع true عشان يختفي
+      
                   return true;
                 } else {
-                  // سحب شمال للتكميل -> يغير الحالة ويرجع false عشان الكارت يرجع مكانه وما يضربش الأرور
                   if (task.status.toLowerCase() == "pending") {
                     task.status = "done";
                     task.save();
@@ -66,7 +65,7 @@ class TasksListView extends StatelessWidget {
               },
 
               onDismissed: (dismissDirection) {
-                // الحذف الفعلي ينفذ فقط في حالة السحب للحذف
+                
                 if (dismissDirection == DismissDirection.startToEnd) {
                   task.delete();
                 }

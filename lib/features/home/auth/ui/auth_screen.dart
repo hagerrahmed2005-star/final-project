@@ -61,14 +61,14 @@ class _AuthScreenState extends State<AuthScreen> {
               children: [
                 const SizedBox(
                   height: 150,
-                ), // Adjusted slightly to keep it responsive
+                ),
                 InkWell(
                   onTap: () {
                     showDialog(
                       context: context,
                       builder: (context) {
                         return AlertDialog(
-                          title: const Text("Select"),
+                          title: const Text("Select Image"),
                           content: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
@@ -106,9 +106,8 @@ class _AuthScreenState extends State<AuthScreen> {
                 const SizedBox(height: 30),
                 Text("Create Your Profile", style: AppTextStyle.headlineStyle),
                 const SizedBox(height: 15),
-                Text(
+                const Text(
                   "Add your name and a profile picture",
-                  
                 ),
                 const SizedBox(height: 30),
                 CustomTextFormFeild(
@@ -119,6 +118,7 @@ class _AuthScreenState extends State<AuthScreen> {
                     if (value == null || value.isEmpty) {
                       return "name is required";
                     }
+                    return null;
                   },
                 ),
                 const SizedBox(height: 30),
@@ -145,7 +145,7 @@ class _AuthScreenState extends State<AuthScreen> {
                           );
                         },
                       );
-                      return; 
+                      return;
                     }
                     if (formKey.currentState?.validate() ?? false) {
                       try {

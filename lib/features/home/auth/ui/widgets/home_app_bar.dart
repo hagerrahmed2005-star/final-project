@@ -1,9 +1,4 @@
-
-
-
 import 'dart:io';
-
-import 'dart:io'; // 1. Added this missing import for the File class
 
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
@@ -17,20 +12,18 @@ class HomeAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final userBox = Hive.box<UserModel>(AppConstant.UserBox);
-    
-    // 2. Fetching the user data from the box (safely checking if it's not empty)
     final userData = userBox.isNotEmpty ? userBox.getAt(0) : null;
+    final imagePath = userData?.image;
+
+    final hasImage = imagePath != null && imagePath.isNotEmpty;
 
     return Row(
       children: [
-        // 3. Cleaned up the CircleAvatar and replaced the nested Image.file with FileImage
         CircleAvatar(
           radius: 40,
           backgroundColor: Colors.grey.shade300,
-          backgroundImage: userData?.image != null && (userData!.image??"").isNotEmpty
-              ? FileImage(File(userData.image??""))
-              : null,
-          child: (userData?.image == null || (userData!.image??"").isEmpty)
+          backgroundImage: hasImage ? FileImage(File(imagePath)) : null,
+          child: !hasImage
               ? const Icon(Icons.person, size: 45, color: Colors.grey)
               : null,
         ),
@@ -44,7 +37,7 @@ class HomeAppBar extends StatelessWidget {
                 style: AppTextStyle.hintStyle,
               ),
               Text(
-                userData?.name ?? "Guest", // Fallback name if data is empty
+                userData?.name ?? "Guest",
                 style: AppTextStyle.bodylargeStyle,
               ),
             ],

@@ -28,7 +28,7 @@ class TaskItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 spacing: 8,
                 children: [
-                  Text(task.titel, style: AppTextStyle.headlineStyle),
+                  Text(task.title, style: AppTextStyle.headlineStyle),
                   Text(
                     task.description,
                     style: AppTextStyle.bodyMediumStyle.copyWith(
